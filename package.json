@@ -1,0 +1,18 @@
+{
+  "name": "excel-uploader",
+  "version": "1.0.0",
+  "description": "An excel uploader service for project tansiq",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node src/app.ts"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^16.3.1",
+    "oracledb": "^5.2.0",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
+  }
+}

@@ -6,7 +6,11 @@ RUN  yum -y install oracle-release-el7 oracle-nodejs-release-el7 && \
 	rm -rf /var/cache/yum
 
 WORKDIR /app
-COPY . .
+
+COPY ./package.json .
+
 RUN npm install
+
+COPY . .
 
 CMD [ "npm", "run", "dev"]

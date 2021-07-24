@@ -1,0 +1,16 @@
+{
+    "type": "oracle",
+    "host": "localhost",
+    "port": 1521,
+    "username": "a_test",
+    "password": "a_test",
+    "entities": [
+        "src/models/**/*.ts"
+    ],
+    "migrations": [
+        "migration/*.ts"
+    ],
+    "cli": {
+        "migrationsDir": "migration"
+    }
+}

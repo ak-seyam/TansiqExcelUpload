@@ -5,7 +5,7 @@
   "main": "src/app.js",
   "scripts": {
     "test": "npx jest --runInBand --verbose",
-    "dev": "ts-node -r dotenv/config src/app.ts"
+    "dev": "nodemon"
   },
   "author": "",
   "license": "MIT",
@@ -15,6 +15,7 @@
     "@types/jest": "^26.0.24",
     "@types/node": "^16.3.1",
     "axios": "^0.21.1",
+    "csv-reader": "^1.0.8",
     "dotenv": "^10.0.0",
     "eureka-js-client": "^4.5.0",
     "express": "^4.17.1",
@@ -22,10 +23,12 @@
     "oracledb": "^5.2.0",
     "ts-jest": "^27.0.3",
     "ts-node": "^10.1.0",
+    "typeorm": "^0.2.34",
     "typescript": "^4.3.5"
   },
   "devDependencies": {
     "jest-module-name-mapper": "^0.1.5",
+    "nodemon": "^2.0.12",
     "tslib": "^2.3.0"
   }
 }

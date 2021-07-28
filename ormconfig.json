@@ -1,9 +1,6 @@
 {
     "type": "oracle",
-    "host": "localhost",
-    "port": 1521,
-    "username": "a_test",
-    "password": "a_test",
+	"url": "",
     "entities": [
         "src/models/**/*.ts"
     ],

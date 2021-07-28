@@ -1,4 +1,5 @@
 import express from "express";
+import { initDB } from "../utils/database-connection";
 import PingRouter from "./routes/ping";
 import ReciverRouter from "./routes/receiver";
 import client from "./services/eurekaClientGenerator";
@@ -16,7 +17,7 @@ async function main() {
   app.use(express.json());
   app.use(PingRouter);
   app.use("/studentsFiles", ReciverRouter);
-
+  await initDB();
   app.listen(parseInt(process.env.PORT), () => {
     console.log("listening on port" + process.env.PORT);
     client.start();

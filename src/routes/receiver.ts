@@ -14,8 +14,12 @@ router.post("/", async (req, res) => {
   const url = req.body["fileUrl"];
   const studentsNameColumnName = req.body["studentsNameColumnName"];
   const studentsMarkColumnName = req.body["studentsMarkColumnName"];
+  const studentsEmailColumnName = req.body["studentEmailColumnName"];
+  const studentPasswordColumnName = req.body["studentPasswordColumnName"];
   let studentNameColumnIndex = -1;
   let studentMarkColumnIndex = -1;
+	let studentEmailColumnIndex = -1;
+	let studentPasswordColumnIndex = -1;
   let isFirstRow = true;
   console.log(url, studentsMarkColumnName, studentsNameColumnName);
   if (!process.env["FILE_STORAGE"]) {
@@ -47,7 +51,11 @@ router.post("/", async (req, res) => {
                 studentNameColumnIndex = idx;
               } else if (col === studentsMarkColumnName) {
                 studentMarkColumnIndex = idx;
-              }
+              } else if (col === studentsEmailColumnName) {
+								studentEmailColumnIndex = idx;
+							} else if (col === studentPasswordColumnName) {
+								studentPasswordColumnIndex = idx
+							}
             });
           } else {
             // create a new student
@@ -55,6 +63,8 @@ router.post("/", async (req, res) => {
 							id: "",
               mark: row[studentMarkColumnIndex],
               name: row[studentNameColumnIndex],
+							email: row[studentEmailColumnIndex],
+							password: row[studentPasswordColumnIndex]
             };
             // store it in the db
 						const insertedStudent = await createStudent(s);
